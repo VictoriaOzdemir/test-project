@@ -1,0 +1,19 @@
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Rubik', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+main {
+    flex: 1;
+}
+
+.magnifying {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}

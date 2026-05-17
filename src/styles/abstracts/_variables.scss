@@ -1,0 +1,30 @@
+:root {
+    --color-bg: #0F152B;
+    --color-bg-ligthen: #2B324C;
+    --color-bg-darker: #05070f;
+    --color-primary: #FF8500; 
+    --color-text: #ffffff;
+    --color-text-muted: #9FA1AA;
+    --color-banner: #8CA2F5;
+    --color-modal-content: #1a1f2e;
+    --color-price: #289211;
+
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-md-2: 18px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 48px;
+
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 16px;
+
+    --card-width: 168px;
+    --transition-speed: 0.3s;
+
+    @media (min-width: 768px) {
+        --card-width: 272px;
+    }
+}

@@ -1,0 +1,109 @@
+.small-card-slider {
+    padding: var(--spacing-md) 0;
+    overflow-x: hidden;
+    cursor: grab;
+    user-select: none;
+
+    &:active {
+        cursor: grabbing;
+    }
+
+    .small-cards-container {
+        display: flex;
+        gap: var(--spacing-sm);
+        width: 100%;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        cursor: grab;
+        overscroll-behavior-x: contain;
+        touch-action: pan-y;
+        -webkit-overflow-scrolling: touch;
+
+        &.active {
+            cursor: grabbing;
+        }
+
+        &.is-dragging {
+            scroll-behavior: auto;
+            user-select: none;
+
+            .small-card {
+                pointer-events: none;
+            }
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .small-card {
+        flex: 0 0 auto;
+        width: 168px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: var(--spacing-sm);
+        background: var(--color-bg-ligthen);
+        border-radius: var(--border-radius-md);
+        cursor: pointer;
+        user-select: none;
+        scroll-snap-align: start;
+        transition: background var(--transition-speed);
+
+        &:hover {
+          opacity: 0.8;
+        }
+
+        .small-card-img {
+            position: relative;
+            width: 100%;
+            max-width: 68px;
+            border-radius: var(--border-radius-sm);
+            overflow: hidden;
+            flex-shrink: 0;
+            padding-top: 32.59%;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                pointer-events: none;
+            }
+            
+        }
+
+        .small-card-info {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+
+            .small-card-title {
+                font-size: 14px;
+                font-weight: 500;
+                color: var(--color-primary);
+                -webkit-line-clamp: 1;
+                line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .small-card-amount {
+                font-size: 14px;
+                font-weight: 500;
+                color: var(--color-price);
+            }
+
+            .small-card-user {
+                font-size: 12px;
+                color: var(--color-text);
+            }
+        }
+    }
+}

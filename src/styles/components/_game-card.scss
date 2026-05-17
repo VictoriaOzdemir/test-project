@@ -1,0 +1,125 @@
+.game-card {
+    max-width: var(--card-width);
+    width: 100%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    cursor: pointer;
+    user-select: none;
+    transition: transform var(--transition-speed);
+    scroll-snap-align: start;
+
+    &:hover {
+        .image-wrapper .overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    .image-wrapper {
+        position: relative;
+        width: 100%;
+        border-radius: var(--border-radius-lg);
+        overflow: hidden;
+        padding-bottom: 69.12%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            display: block;
+        }
+
+        .overlay {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            justify-items: center;
+            align-content: end;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-sm);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity var(--transition-speed), visibility var(--transition-speed);
+            z-index: 11;
+
+            @media (min-width: 768px) {
+                gap: var(--spacing-md-2);
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 50%;
+                background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7), #000000 100%);
+                z-index: -1;
+            }
+
+            .btn {
+                display: inline-block;
+                width: auto;
+                border: none;
+                cursor: pointer;
+                color: var(--color-text);
+                font-weight: bold;
+                text-align: center;
+                transition: all var(--transition-speed);
+
+                &:hover {
+                    opacity: 0.85;
+                }
+            }
+
+            .play-btn {
+                background-color: var(--color-primary);
+                font-size: 14px;
+                padding: var(--spacing-sm) var(--spacing-lg);
+                border-radius: var(--border-radius-lg);
+
+                @media (min-width: 768px) {
+                    font-size: 16px;
+                    padding: var(--spacing-md-2) var(--spacing-xxl);
+                }
+            }
+
+            .demo-btn {
+                background: transparent;
+                color: var(--color-text);
+                padding: 11px 17px;
+                font-size: 14px;
+            }
+        }
+    }
+
+    .card-title {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-sm);
+        color: var(--color-text-muted);
+        font-size: 14px;
+        font-weight: bold;
+        padding: 0 var(--spacing-sm);
+
+        .card-heading {
+            -webkit-line-clamp: 1;
+            line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            height: 17px;
+            font-size: 14px;
+        }
+
+        .play-ico-sm {
+            width: 16px;
+            height: 16px;
+        }
+    }
+}
